@@ -1,0 +1,79 @@
+<!DOCid="choice" TYPE html>
+	<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Password Generator</title>
+		<link rel="stylesheet" href="./srcs/main_tailwind.css">
+	</head>
+
+	<body class="bg-bodyBackground font-body-font select-none">
+		<div class="container w-screen
+				flex flex-col items-center justify-evenly px-6 lg:w-desktop">
+
+			<div class="title text-textLightGray text-xl font-semibold mt-20">Password Generator</div>
+
+			<div class="passwd-block cursor-pointer w-full 
+					flex justify-between items-center bg-bgLightGray p-5 my-4">
+				<div class="passwd-content text-white text-base sm:text-lg font-bold"></div>
+				<div><img src="./srcs/images/icon-copy.svg" alt=""></div>
+			</div>
+
+			<div class="menu-block relative p-5 bg-bgLightGray flex flex-col justify-around  gap-8 sm:gap-12 w-full">
+				<div class="length-container">
+					<div class="title-and-number flex justify-between items-center font-bold">
+						<div class="text-white text-base sm:text-xl">Character Length</div>
+						<div class="length-number text-green text-xl sm:text-3xl">8</div>
+					</div>
+					<input class="cursor-ew-resize w-full appearance-none bg-gray-900 h-2 text-black my-4" type="range"
+						min="8" max="64" value="16">
+				</div>
+				<div class="choices-container flex flex-col gap-2 sm:gap-5 text-sm sm:text-lg">
+					<div class="choices flex items-center">
+						<input class="w-5 h-5" id="one" type="checkbox">
+						<label for="one" class="select-none ml-5 text-white font-bold">Include Uppercase Letters</label>
+					</div>
+					<div class="choices flex items-center">
+						<input class="w-5 h-5" id="two" type="checkbox">
+						<label for="two" class="select-none ml-5 text-white font-bold">Include Lowercase Letters</label>
+					</div>
+					<div class="choices flex items-center">
+						<input class="w-5 h-5" id="three" type="checkbox">
+						<label for="three" class="select-none ml-5 text-white font-bold">Include Numbers</label>
+					</div>
+					<div class="choices flex items-center">
+						<input class="w-5 h-5" id="four" type="checkbox">
+						<label for="four" class="select-none ml-5 text-white font-bold">Include Symbols</label>
+					</div>
+				</div>
+				<div class="strength-block bg-gray-900 p-3 sm:p-5 flex items-center justify-between text-sm sm:text-xl">
+					<div class="strength-text text-textLightGray font-bold">STRENGTH</div>
+					<div class="levels-area flex items-center justify-between">
+						<div class="secure-level-text font-bold mr-2 sm:mr-5 text-white">HIGH</div>
+						<div class="levels-colomns grid grid-cols-4 gap-2">
+							<span
+								class="w-2 h-8 sm:w-2 sm:h-10 bg-emerald-500 border-solid border-white border-2"></span>
+							<span
+								class="w-2 h-8 sm:w-2 sm:h-10 bg-emerald-500 border-solid border-white border-2"></span>
+							<span
+								class="w-2 h-8 sm:w-2 sm:h-10 bg-emerald-500 border-solid border-white border-2"></span>
+							<span
+								class="w-2 h-8 sm:w-2 sm:h-10 bg-emerald-500 border-solid border-white border-2"></span>
+						</div>
+					</div>
+				</div>
+				<div
+					class="generate-btn transition cursor-pointer bg-green hover:bg-emerald-200 flex justify-center items-center py-3 sm:py-5">
+					<div class="text-gray-800 font-bold text-xl">GENERATE</div>
+					<img class="ml-3 w-3 h-3" src="./srcs/images/icon-arrow-right.svg" alt="">
+				</div>
+			</div>
+		</div>
+		<script src="./srcs/main.js"></script>
+	</body>
+
+	</html>
+
+
+	<!-- TODO: limit the characters length -->
