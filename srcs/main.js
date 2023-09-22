@@ -53,7 +53,6 @@ function appLoop() {
 	let includeSymbols = 0;
 	let randomString = genereateRandomString(length, 1, 1, 1, 1);
 
-	randomString = randomString.length > 20 ? randomString.substring(0, 17) + "..." : randomString;
 	document.querySelectorAll("input[type=range], input[type=checkbox]").forEach((elem)=>{
 		elem.addEventListener("input", (n) => {
 			if (n.target.type == "range")
@@ -105,17 +104,16 @@ function appLoop() {
 		if (!includeUpper && !includeLower && !includeNum && !includeSymbols)
 			includeUpper = 1, includeLower = 1, includeNum = 1, includeSymbols = 1;
 		randomString = genereateRandomString(length, includeUpper, includeLower, includeNum, includeSymbols);
-		randomString = randomString.length > 20 ? randomString.substring(0, 17) + "..." : randomString;
-		copyArea.querySelector(".passwd-content").textContent = randomString;
+		copyArea.querySelector(".passwd-content").textContent = randomString.length > 20 ? randomString.substring(0, 17) + "..." : randomString;
 	});
-	copyArea.querySelector(".passwd-content").textContent = randomString;
+	copyArea.querySelector(".passwd-content").textContent = randomString.length > 20 ? randomString.substring(0, 17) + "..." : randomString;
 	copyArea.addEventListener("click", _=>{
 		navigator.clipboard.writeText(randomString);
 		copyArea.querySelector(".passwd-content").textContent = "Password Copied To Clipboard";
 		copyArea.querySelector(".passwd-content").classList.remove("text-white");
 		copyArea.querySelector(".passwd-content").classList.add("text-green");
 		setTimeout(() => {
-			copyArea.querySelector(".passwd-content").textContent = randomString;
+			copyArea.querySelector(".passwd-content").textContent = randomString.length > 20 ? randomString.substring(0, 17) + "..." : randomString;
 			copyArea.querySelector(".passwd-content").classList.remove("text-green");
 			copyArea.querySelector(".passwd-content").classList.add("text-white");
 		}, 1000);
